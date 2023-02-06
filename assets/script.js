@@ -29,6 +29,7 @@ leftArrow.addEventListener("click", () => {
   prevArrow();
   updateDots();
   updateImages();
+  updateTexte();
 });
 
 rightArrow.addEventListener("click", () => {
@@ -37,6 +38,7 @@ rightArrow.addEventListener("click", () => {
   nextArrow();
   updateDots();
   updateImages();
+  updateTexte();
 });
 
 function prevArrow() {
@@ -73,4 +75,10 @@ function updateImages() {
   const actualPictures = slides[actualSlide];
   pictures.src = "./assets/images/slideshow/" + actualPictures.image;
   pictures.alt = actualPictures.tagLine;
+}
+
+function updateTexte() {
+  const textes = document.querySelector("#banner-txt");
+  const actualTexte = slides[actualSlide];
+  textes.innerHTML = actualTexte.tagLine;
 }
