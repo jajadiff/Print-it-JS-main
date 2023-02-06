@@ -28,6 +28,7 @@ leftArrow.addEventListener("click", () => {
   console.log("Arrow Left fonctionne");
   prevArrow();
   updateDots();
+  updateImages();
 });
 
 rightArrow.addEventListener("click", () => {
@@ -35,6 +36,7 @@ rightArrow.addEventListener("click", () => {
   console.log("Arrow Right fonctionne");
   nextArrow();
   updateDots();
+  updateImages();
 });
 
 function prevArrow() {
@@ -64,4 +66,11 @@ function updateDots() {
       dots[i].classList.remove("dot_selected");
     }
   }
+}
+
+function updateImages() {
+  const pictures = document.querySelector(".banner-img");
+  const actualPictures = slides[actualSlide];
+  pictures.src = "./assets/images/slideshow/" + actualPictures.image;
+  pictures.alt = actualPictures.tagLine;
 }
